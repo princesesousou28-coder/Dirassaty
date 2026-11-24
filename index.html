@@ -21,7 +21,11 @@
 <label class="row" id="cons" hidden><input type="checkbox" id="cb"><span>أوافق على <a href="#" data-priv style="color:var(--ac)">سياسة الخصوصية</a></span></label>
 <button class="btn p" id="ebtn">تسجيل الدخول</button>
 <button type="button" class="btn" id="sw">ليس لديك حساب؟ سجّل بالبريد</button>
+<button type="button" class="btn" id="rs" hidden>إعادة إرسال رسالة التأكيد</button>
+<button type="button" class="btn" id="fg">نسيت كلمة المرور؟</button>
 </form>
+<button type="button" class="btn" id="dg">فحص إعدادات الاتصال</button><ul id="dgl" hidden style="padding:0"></ul>
+<form id="rf" class="stack" hidden><h2>كلمة مرور جديدة</h2><input id="rp" type="password" placeholder="كلمة المرور الجديدة" required maxlength="72" autocomplete="new-password"><ul id="rrules" style="padding:0"><li class="rule" data-r="len">8 أحرف لاتينية أو أكثر</li><li class="rule" data-r="num">3 أرقام على الأقل</li><li class="rule" data-r="up">حرف كبير واحد على الأقل</li><li class="rule" data-r="sym">أحد الرموز @ # _</li></ul><button class="btn p">حفظ كلمة المرور</button></form>
 <form id="mf" class="stack" hidden><p>أدخل رمز تطبيق المصادقة (6 أرقام)</p>
 <input id="mc" inputmode="numeric" maxlength="6" pattern="\d{6}" required autocomplete="one-time-code"><button class="btn p">تأكيد</button></form>
 </div></div>
@@ -54,7 +58,7 @@
 </section>
 
 <section id="p-calc" class="pg"><div class="g stack"><h2>حاسبة المعدل</h2>
-<select id="cl"><option value="m1">1 متوسط</option><option value="m2">2 متوسط</option><option value="m3">3 متوسط</option><option value="m4">4 متوسط</option><option value="p">ابتدائي</option><option value="s">ثانوي</option></select>
+<select id="cl"><optgroup label="المتوسط"><option value="m1">1 متوسط</option><option value="m2">2 متوسط</option><option value="m3">3 متوسط</option><option value="m4">4 متوسط</option></optgroup><optgroup label="الثانوي"><option value="s1st">1 ثانوي: جذع مشترك علوم وتكنولوجيا</option><option value="s1lit">1 ثانوي: جذع مشترك آداب</option><option value="sx">2 و3 ثانوي: علوم تجريبية</option><option value="sm">2 و3 ثانوي: رياضيات</option><option value="st">2 و3 ثانوي: تقني رياضي</option><option value="sg">2 و3 ثانوي: تسيير واقتصاد</option><option value="sl">2 و3 ثانوي: آداب وفلسفة</option><option value="sf">2 و3 ثانوي: لغات أجنبية</option></optgroup><optgroup label="الابتدائي"><option value="p">ابتدائي</option></optgroup></select>
 <div id="subs"></div>
 <p>المعدل: <strong id="avg" style="font-size:1.6rem;color:var(--ac)">—</strong> / 20</p>
 <button class="btn" id="savg">حفظ المعدل في الملف الشخصي</button></div></section>
@@ -69,7 +73,8 @@
 <section id="p-set" class="pg"><div class="g stack"><h2>المظهر</h2>
 <label>لون الموقع<input type="color" id="col" value="#d6ae70"></label>
 <label>خلفية من جهازك<input type="file" id="bgf" accept="image/*"></label>
-<button class="btn" id="bgr">الخلفية الافتراضية</button></div>
+<button class="btn" id="bgr">الخلفية الافتراضية</button>
+<button class="btn" id="thr">العودة إلى الثيم الأصلي</button></div>
 <div class="g stack"><h2>الحساب والأمان</h2><p id="who" class="mu"></p>
 <label class="row"><input type="checkbox" id="sv"><span>حفظ المعلومات الدراسية في ملفي الشخصي</span></label>
 <input id="np" type="password" placeholder="كلمة مرور جديدة" maxlength="72" autocomplete="new-password"><button class="btn" id="setpw">تعيين كلمة المرور</button>

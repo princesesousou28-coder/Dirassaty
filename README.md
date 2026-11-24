@@ -10,6 +10,13 @@
   في Google Cloud أضف Authorized redirect URI: `https://<مشروعك>.supabase.co/auth/v1/callback`
 - Authentication ← URL Configuration: Site URL = رابط موقعك، وأضف في Redirect URLs: `https://<نطاقك>/**` (ولمعاينات Vercel: `https://*-<فريقك>.vercel.app/**`).
 
+### التسجيل وتأكيد البريد (أكثر أسباب فشل إنشاء الحساب)
+- Authentication ← Sign In / Providers: فعّل Email وأبقِ «Allow new users to sign up» مفعّلاً.
+- بريد التأكيد: خدمة البريد الافتراضية في Supabase محدودة جداً (قد ترفض عناوين خارج فريقك أو تتجاوز الحد بسرعة).
+  لإنتاج حقيقي اضبط SMTP مخصصاً: Authentication ← Emails ← SMTP Settings (يوجد مزوّدون بخطة مجانية).
+- Site URL وRedirect URLs يجب أن تحتوي رابط موقعك بالضبط، وإلا يفتح رابط التأكيد صفحة خاطئة (غالباً localhost).
+- على شاشة الدخول زر «فحص إعدادات الاتصال» يعرض ما يمكن فحصه من المتصفح.
+
 ## 3) Vercel
 - Framework Preset: Other (يقرأ الإعداد من `vercel.json`: Build `npm run build`، Output `dist`).
 - Settings ← Environment Variables (Production وPreview):
